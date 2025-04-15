@@ -12,6 +12,19 @@ This template provides a starting point for a modern and secure Electron app usi
 - **Build Tool**: [webpack](https://webpack.js.org/) (v5.94.0) for efficient bundling
 - **Electron Version**: v33.0.0
 
+## System Requirements
+
+- **Node.js**: v18.0.0 or higher
+- **npm**: v9.0.0 or higher
+- **Angular**: v19.2.0
+- **Operating System**:
+  - Windows 10/11 (64-bit)
+  - macOS 10.15 (Catalina) or higher
+  - Linux (Ubuntu 20.04 LTS or higher, Fedora 34 or higher)
+- **Development Tools**:
+  - Git
+  - Visual Studio Code (recommended for debugging)
+
 ## Security Features
 
 - Context Isolation enabled
