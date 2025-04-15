@@ -1,0 +1,33 @@
+<div class="file-explorer">
+  <div class="toolbar">
+    <button (click)="selectDirectory()" class="btn">
+      <i class="fas fa-folder-open"></i> Select Directory
+    </button>
+    <div class="current-path">{{ currentPath || 'No directory selected' }}</div>
+  </div>
+
+  <div class="content">
+    <div *ngIf="loading" class="loading">
+      <i class="fas fa-spinner fa-spin"></i> Loading...
+    </div>
+
+    <div *ngIf="error" class="error">
+      {{ error }}
+    </div>
+
+    <div *ngIf="!loading && !error" class="files-list">
+      <div class="file-item" *ngFor="let file of files" (click)="navigateTo(file.path)">
+        <div class="file-icon">
+          <i class="fas" [ngClass]="file.isDirectory ? 'fa-folder' : 'fa-file'"></i>
+        </div>
+        <div class="file-info">
+          <div class="file-name">{{ file.name }}</div>
+          <div class="file-details">
+            <span *ngIf="!file.isDirectory">{{ formatSize(file.size) }}</span>
+            <span class="file-type">{{ file.isDirectory ? 'Directory' : 'File' }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
