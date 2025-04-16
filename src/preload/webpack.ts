@@ -1,4 +1,4 @@
-import * as path from 'path';
+const path = require('path');
 
 module.exports = (env: string) => {
   if (!env) { env = 'development'; }

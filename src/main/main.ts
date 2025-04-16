@@ -58,6 +58,9 @@ ipcMain.on('request-systeminfo', () => {
 });
 
 ipcMain.handle('read-directory', async (event, dirPath: string) => {
+  if (!dirPath) {
+    return [];
+  }
   try {
     const files = await fs.promises.readdir(dirPath, { withFileTypes: true });
     return files.map(file => ({
